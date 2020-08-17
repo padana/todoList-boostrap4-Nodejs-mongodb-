@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/4dc03f2399.js" crossorigin="anonymous"></script>
+    <title><%= title %></title>
+</head>
+
+<body class="bg-Secondary">
+  <div class="container">
+    <%- include('./partials/nav')  %>
+  </div>
+
+ <div class="container">
+  <div class="card col-md-6 m-5">
+    <div class="card-body">
+        <h4 class="card-title">Editer la tâche selectionné</h4>
+        <form  method="POST" action="/edit/<%= todo.id  %>?_method=PUT">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Editer la tache" name ='nom' value="<%= todo.nom %>">
+            </div>
+            <button type="submit" class="btn btn-primary">Editer <i class="fas fa-edit"></i></button>
+          </form>
+    </div>
+  </div>
+ </div>
+ 
+</body>

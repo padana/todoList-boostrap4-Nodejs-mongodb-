@@ -1,0 +1,26 @@
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Name</th>
+          <th>Editer</th>
+          <th>supprimer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%  for(TODOS of TODOS)  {%>
+        <tr>
+          <td><%= TODOS.id  %></td>
+          <td><%= TODOS.nom %></td>
+          <td>
+            <a href="/edit/<%= TODOS.id  %>">
+            <button class="btn btn-info ml-1"><i class="fas fa-edit"></i></button>
+            </a>
+          </td>
+           <form  method="POST" action="/supprimer/<%= TODOS.id  %>?_method=DELETE">
+             <td><button class="btn btn-danger ml-4"><i class="far fa-trash-alt"></i></button></td> 
+           </form>
+        </tr>
+        <%  }  %>
+      </tbody>
+    </table>
